@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query collection</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+<div class="main">
+    <h1>Instructions</h1>
+    <h2>Please type in a query and select several graphs that match your query.</h2>
+    <h2><a href="exapmle.html">Example</a></h2>
+    <form id="form1">
+        <h3>Insert query for step 1:</h3>
+        <input type="text" id="query1" class="submissionfield"><br>
+        <h3>Insert query for step 2:</h3>
+        <input type="text" id="query2" class="submissionfield"><br>
+
+        <div class="graphs">
+            <div id="graph_0"></div>
+            <div id="graph_1"></div>
+            <div id="graph_2"></div>
+            <div id="graph_3"></div>
+            <div id="graph_4"></div>
+            <div id="graph_5"></div>
+            <div id="graph_6"></div>
+            <div id="graph_7"></div>
+            <div id="graph_8"></div>
+            <div id="graph_9"></div>
+            <div id="graph_10"></div>
+            <div id="graph_11"></div>
+            <div id="graph_12"></div>
+            <div id="graph_13"></div>
+            <div id="graph_14"></div>
+        </div>
+        <button type="button" class="button">Save</button>
+        <input type="submit">
+    </form>
+</div>
+
+<nav>
+    <a href="index.html">Collection1</a> |
+    <a href="/html/">Collection2</a> |
+    <a href="/html/">Collection3</a> |
+    <a href="/html/">Collection4</a> |
+    <a href="/html/">Collection5</a> |
+    <a href="/html/">Collection6</a> |
+    <a href="/html/">Collection7</a> |
+    <a href="/html/">Collection8</a> |
+    <a href="/html/">Collection9</a> |
+    <a href="/html/">Collection10</a> |
+    <a href="/html/">Collection11</a> |
+    <a href="/html/">Collection12</a> |
+    <a href="/html/">Collection13</a> |
+    <a href="/html/">Collection14</a> |
+    <a href="/html/">Collection15</a> |
+    <a href="/html/">Collection16</a> |
+    <a href="/html/">Collection17</a> |
+    <a href="/html/">Collection18</a> |
+    <a href="/html/">Next</a> |
+
+</nav>
+
+
+
+
+<script src="script.js"></script>
+<script src="d3.js"></script>
+<script>generateGraphs("1");</script>
+</body>
+
+
+
+
+</html>
