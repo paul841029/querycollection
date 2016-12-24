@@ -94,44 +94,39 @@ function generateGraphs(index) {
 
 }
 
-function selectgraph(index){
+function selectStep1(index){
+    var index_arry = index.split("/");
+
+    for (let i =0; i<index_arry.length; i++) {
+        (function(){
+            $("#graph_" + index_arry[i]).attr("class", "selected_once");
+            selected_graph[+index_arry[i]]++;
+        })();
+    }
 
 }
+
+function selectStep2(index){
+    var index_arry = index.split("/");
+
+    for (let i =0; i<index_arry.length; i++) {
+        (function(){
+            $("#graph_" + index_arry[i]).attr("class", "selected_twice");
+            selected_graph[+index_arry[i]] = 2;
+        })();
+    }
+
+    second = 1;
+}
+
+
 $(document).ready(function() {
-    //clicking handler
-    $(".graphs").on('click',"*", function() {
-        if (this.id !== "") {
-
-            var index = this.id.split("_")[this.id.split("_").length - 1];
-            index = +index;
-            if (!second && selected_graph[index] === 0) {
-                $("#" + this.id).attr("class", "selected_once");
-                selected_graph[index]++;
-            }
-            else if (!second && selected_graph[index] === 1) {
-                $("#" + this.id).attr("class", "");
-                selected_graph[index]--;
-            }
-
-            else if(second && selected_graph[index] === 1) {
-                $("#" + this.id).attr("class", "selected_twice");
-                selected_graph[index]++;
-            }
-
-            else if(second && selected_graph[index] === 2) {
-                $("#" + this.id).attr("class", "selected_once");
-                selected_graph[index]--;
-            }
-        }
-
-    });
-
-
 
     //submission handler
     $( "form" ).submit(function( event ) {
         var text = "Query:\xa0\xa0"+$("#query1").val()+"\n";
         var text_step2 = "Query:\xa0\xa0"+$("#query2").val()+"\n";
+
         var graphs = "Index of selected graphs:\xa0\xa0 /";
         var graphs_step2 = "Index of selected graphs:\xa0\xa0 /";
         for (let i = 0; i<selected_graph.length; i++) {
@@ -151,9 +146,7 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    $("button").on("click", function(){
-        second = 1;
-    })
+
 });
 
 
